@@ -25,7 +25,7 @@ export const projects: Project[] = [
     category: 'unreal',
     media: {
       type: 'image',
-      src: '/Cyberspace.png',
+      src: import.meta.env.BASE_URL + 'Cyberspace.png',
     },
     features: ['Multiplayer LAN networking', 'Voice chat', 'EOS integration', 'Unreal Engine'],
   },
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     category: 'unity',
     media: {
       type: 'video',
-      src: '/FurnitureApp.mp4',
+      src: import.meta.env.BASE_URL +'FurnitureApp.mp4',
     },
     features: ['AR placement', 'Scaling', 'Rotation', 'Shaders'],
   },
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     category: 'unity',
     media: {
       type: 'video',
-      src: '/AlphabetGame.mp4',
+      src: import.meta.env.BASE_URL + 'AlphabetGame.mp4',
     },
     features: ['Asset management', 'Score system', 'Health system', 'Visual & Audio feedback', 'Game Logic'],
   },
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     category: 'unreal',
     media: {
       type: 'video',
-      src: '/Archvis.mp4',
+      src: import.meta.env.BASE_URL + 'Archvis.mp4',
     },
     features: ['Raycast based interactions', 'Dynamic Material changing', 'Dynamic Object changing', 'Lighting', 'Interaction', 'Teleportation', 'Video & Audio'],
   },
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     category: 'unity',
     media: {
       type: 'video',
-      src: '/Aladdin.mp4',
+      src: import.meta.env.BASE_URL + 'Aladdin.mp4',
     },
     features: ['Object Pooling', 'Trail Effects', 'Power-ups', 'Game state management'],
   },
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     category: 'unreal',
     media: {
       type: 'video',
-      src: '/Dodge3.mp4',
+      src: import.meta.env.BASE_URL + 'Dodge3.mp4',
     },
     features: ['Ragdoll physics', 'Procedural obstacles', 'Audio', 'Blueprints', 'Foliage'],
   },
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     category: 'blender',
     media: {
       type: 'image',
-      src: '/Blender1.png',
+      src: import.meta.env.BASE_URL + 'Blender1.png',
     },
     features: ['3D modeling', 'UV mapping', 'Reference modeling', 'Materials', 'Texturing'],
   },
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     category: 'unreal',
     media: {
       type: 'video', // change to 'video' if you have one
-      src: '/HillScape.mp4', // update if needed
+      src: import.meta.env.BASE_URL + 'HillScape.mp4', // update if needed
     },
     features: ['Procedural foliage', 'Terrain painting', 'Optimization', 'Creek'],
   },

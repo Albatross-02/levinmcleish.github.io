@@ -64,7 +64,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg pt-24 md:pt-0"
     >
-      {/* Background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -77,12 +76,10 @@ export default function Hero() {
       />
 
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Name */}
         <h1 className="section-title text-5xl sm:text-6xl md:text-7xl text-white mb-4">
           Levin <span className="text-gradient">McLeish</span>
         </h1>
 
-        {/* Typed text */}
         <div className="flex items-center justify-center gap-2 mb-6 h-10">
           <span className="text-2xl sm:text-3xl text-[#00bfff]">
             {displayText}
@@ -90,12 +87,10 @@ export default function Hero() {
           <span className="w-[2px] h-6 bg-[#00bfff] animate-pulse" />
         </div>
 
-        {/* Bio */}
         <p className="text-slate-400 max-w-xl mx-auto mb-8 text-sm sm:text-base">
           Building immersive Games, Websites, XR experiences, and multiplayer systems.
         </p>
 
-        {/* Skills */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {skills.map(skill => (
             <span key={skill} className="tag">
@@ -104,16 +99,16 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* ✅ FIXED CTA */}
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <a
-            href="/Levin_Resume.pdf"
+            href={import.meta.env.BASE_URL + 'Levin_Resume.pdf'} // ✅ FIXED
             download="Levin_McLeish_Resume.pdf"
             onClick={playClick}
             className="btn-primary px-6 py-3 rounded-lg text-sm flex items-center gap-2"
           >
             <Download size={16} />
-             Resume 
+            Resume
           </a>
 
           <button
@@ -164,13 +159,12 @@ export default function Hero() {
             <Instagram size={18} />
           </a>
 
-          {/* ✅ Dribbble Added */}
           <a
             href="https://dribbble.com/levin-mcleish"
             target="_blank"
             rel="noopener noreferrer"
             onClick={playClick}
-            className="w-10 h-10 glass rounded-lg flex items-center justify-center text-slate-400 hover:text-[#00bfff]"
+            className="w-10 h-10 glass rounded-lg flex items-center justify-center text-slate-400 hover:text-pink-500"
           >
             <Dribbble size={18} />
           </a>

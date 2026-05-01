@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Maximize2 } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { projects } from '../data/projects';
 import type { Project } from '../data/projects';
 import ProjectModal from './ProjectModal';
@@ -57,7 +57,8 @@ function ProjectCard({
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="glass-card rounded-xl overflow-hidden group"
+      onClick={handleClick} // ✅ FULL CARD CLICKABLE
+      className="glass-card rounded-xl overflow-hidden group cursor-pointer"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(30px)',
@@ -84,13 +85,6 @@ function ProjectCard({
         )}
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#050d14] via-transparent to-transparent" />
-
-        <button
-          onClick={handleClick}
-          className="absolute top-3 right-3 w-8 h-8 rounded glass flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:text-[#00bfff]"
-        >
-          <Maximize2 size={14} />
-        </button>
       </div>
 
       {/* Content */}
@@ -109,15 +103,20 @@ function ProjectCard({
           ))}
         </div>
 
+        {/* ✅ Button still works separately */}
         <button
-          onClick={handleClick}
+          onClick={(e) => {
+            e.stopPropagation(); // 🔥 prevent double trigger
+            handleClick();
+          }}
           className={`flex items-center gap-2 text-xs ${
             isDribbble
               ? 'text-pink-400 hover:text-pink-500'
               : 'text-[#00bfff] hover:text-[#00ffff]'
           }`}
         >
-          {isDribbble ? 'View on Dribbble' : 'View Details'} <ExternalLink size={12} />
+          {isDribbble ? 'View on Dribbble' : 'View Details'} 
+          <ExternalLink size={12} />
         </button>
       </div>
     </div>
@@ -131,7 +130,6 @@ export default function Projects() {
 
   const playClick = useClickSound();
 
-  // ✅ FIXED FILTER LOGIC
   const filtered =
     filter === 'all'
       ? [...projects, dribbbleProject]
@@ -142,6 +140,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-24 sm:py-32 overflow-x-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        
         {/* Header */}
         <div
           ref={titleRef as React.RefObject<HTMLDivElement>}

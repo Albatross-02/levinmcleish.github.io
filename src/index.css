@@ -15,8 +15,24 @@
     background-color: #020408;
     color: #e2e8f0;
     overflow-x: hidden;
-    cursor: none;
     width: 100%;
+  }
+
+  /* 🔥 Hide cursor ONLY on desktop */
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+
+    * {
+      cursor: none;
+    }
+
+    /* Optional: keep pointer on interactive elements */
+    a,
+    button {
+      cursor: pointer;
+    }
   }
 
   /* 🔥 CRITICAL FIX: prevents width overflow bugs */
@@ -28,10 +44,6 @@
   #root {
     overflow-x: hidden;
     width: 100%;
-  }
-
-  * {
-    cursor: none;
   }
 
   ::-webkit-scrollbar {
@@ -69,8 +81,6 @@
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(0, 191, 255, 0.15);
     transition: all 0.35s ease;
-
-    /* 🔥 IMPORTANT: prevents hover transform overflow */
     will-change: transform;
   }
 
@@ -177,8 +187,6 @@
       linear-gradient(rgba(0, 191, 255, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 191, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
-
-    /* safe containment */
     width: 100%;
   }
 }

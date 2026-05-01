@@ -105,7 +105,7 @@ function CertCard() {
                 }}
               >
                 <img
-                  src="/image.png"
+                  src={import.meta.env.BASE_URL + 'image.png'}
                   alt="Unity Certification Badge"
                   className="w-20 h-20 object-contain"
                 />

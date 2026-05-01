@@ -4,7 +4,9 @@ export default function useClickSound() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   if (!audioRef.current) {
-    audioRef.current = new Audio('/Click.mp3'); // exact filename
+    audioRef.current = new Audio(
+      import.meta.env.BASE_URL + 'Click.mp3'
+    );
     audioRef.current.volume = 0.4;
   }
 

@@ -140,7 +140,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/levin-mcleish-m-1b08b320a/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={playClick}
@@ -150,7 +150,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/levins_artchive/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={playClick}
